@@ -20,8 +20,8 @@ export SC2PATH="/Applications/StarCraft II"
 # Linux
 export SC2PATH="$HOME/StarCraftII"
 
-# Download maps
-python download_maps.py
+# (Optional) Download extra ladder maps - basic maps are included with SC2
+# python download_maps.py
 ```
 
 ## Run
