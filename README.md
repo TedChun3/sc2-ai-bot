@@ -22,6 +22,9 @@ python3.12 --version
 # Install dependencies
 python3.12 -m pip install -r requirements.txt
 
+# Fix yarl compatibility issue (port parsing bug on recent versions)
+python3.12 -m pip install "aiohttp>=3.11.10" "yarl<1.18" --break-system-packages
+
 # Set SC2 path (default for macOS)
 export SC2PATH="/Applications/StarCraft II"
 ```
@@ -176,6 +179,12 @@ pip install aiarena-client
 # macOS ships with Python 3.9 — burnysc2 requires 3.10+
 brew install python@3.12
 python3.12 -m pip install -r requirements.txt
+```
+
+### macOS: `ws://127.0.0.1:None/sc2api` error
+Recent `yarl` versions have a port parsing bug. Fix:
+```bash
+python3.12 -m pip install "aiohttp>=3.11.10" "yarl<1.18" --break-system-packages
 ```
 
 ### macOS: SC2 crashes when launched via SSH/Termius
