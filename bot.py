@@ -9,6 +9,7 @@ from sc2 import maps
 from sc2.bot_ai import BotAI
 from sc2.data import Difficulty, Race
 from sc2.ids.ability_id import AbilityId
+from sc2.ids.buff_id import BuffId
 from sc2.ids.unit_typeid import UnitTypeId
 from sc2.main import run_game
 from sc2.player import Bot, Computer
@@ -120,7 +121,7 @@ class ProtossBot(BotAI):
             if nexus.energy >= 50:
                 for gw in self.structures(UnitTypeId.GATEWAY).ready:
                     if not gw.is_idle and not gw.has_buff(
-                        AbilityId.EFFECT_CHRONOBOOSTENERGYCOST
+                        BuffId.CHRONOBOOSTENERGYCOST
                     ):
                         nexus(
                             AbilityId.EFFECT_CHRONOBOOSTENERGYCOST, gw
